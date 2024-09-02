@@ -49,7 +49,7 @@ namespace NetflixClone.Services
         }
 
         public async Task<IEnumerable<Media>> GetSimilarAsync(int id, string type = "movie") =>
-        await GetMediasAsync($"{TmdbUrls.get(id, type)}&api_key={ApiKey}");
+        await GetMediasAsync($"{TmdbUrls.GetSimilar(id, type)}&api_key={ApiKey}");
         private async Task<IEnumerable<Media>> GetMediasAsync(string url)
         {
             var fullUrl = $"{url}&api_key={ApiKey}";
